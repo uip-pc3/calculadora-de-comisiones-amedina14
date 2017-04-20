@@ -1,0 +1,18 @@
+from app import main
+import unittest
+
+class FlaskTestCase(unittest.TestCase):
+    def test_index(self):
+        tester = main.app.test_client(self)
+        response = tester.get('/',content_type='html/text')
+        self.assertEqual(response.status_code,200)
+
+    def test_resultado(self):
+        tester = main.app.test_client(self)
+        response = tester.get('/resultado',content_type='html/text')
+        self.assertEqual(response.status_code,200)
+
+    def test_m1(self):
+        tester = main.app.test_client(self)
+        response = tester.get('/m1', content_type='html/text')
+        self.assertEqual(response.status_code, 200)

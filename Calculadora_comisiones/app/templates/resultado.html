@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado comisiones</title>
+</head>
+<body>
+<h1 align="center"><u><font color="navy">Resultados</font></u></h1>
+<table align="center" >
+    <tr>
+        <td><h2><b>Nombre: {{ name }};</b></h2></td>
+        <td><h2><b>Apellido: {{ apellido }}</b></h2></td>
+    </tr><br>
+    <tr>
+        <td><h2><b>Mes:
+            {% for mes in meses %}
+            {{ mes }}
+            {% endfor %}
+        </b></h2></td>
+    </tr><br>
+    <tr>
+        <td><h2><b>Ventas: ${{ venta }}</b></h2></td>
+    </tr><br>
+    {% if comision %}
+    <tr>
+        <td colspan="2"><h2><b>Total comision: ${{ comision }}</b></h2></td>
+    </tr>
+    {%endif%}
+    {% if atencion %}
+    <tr>
+        <td><h2><b>Aviso:  {{ atencion }}</b></h2></td>
+    </tr>
+    {%endif%}
+    <tr align="center">
+        <td colspan="2"><form action="/m1">
+                <input type="submit" value="Home">
+            </form>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

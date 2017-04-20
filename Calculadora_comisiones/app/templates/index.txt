@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Claculadora</title>
+<script type="text/javascript" src="{{ url_for('static',filename='vacia.js' )}}"></script>
+</head>
+<center><h1><u><font color="navy">Calculadora Comisiones</font></u></h1></center>
+<body>
+<form action="http://localhost:5000/meses" method="post"><br>
+    <table border="2" align="center">
+        <tr>
+            <td>
+                <div><u>Agente de venta</u></div><br>
+                <div align="justify"><b>Ingresa nombre: </b>
+                <input type="text" name="name"></div>
+                <div align="justify"><b>Ingresa apellido: </b>
+                <input type="text" name="apellido"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <b>Ingresa monto venta del mes :</b><br>
+            <ul id="meses">
+                {% for mes in meses %}
+                    <b>{{ mes }}<div align="justify">
+                        <input type="text" name="venta">
+                        </div>
+                    </b>
+                {% endfor %}
+            </ul>
+            <center><input type="submit" value="Send"></center>
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
+
